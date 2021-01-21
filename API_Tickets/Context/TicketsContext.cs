@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using API_Tickets.Models;
+using API_Tickets.Interfaces;
+using Microsoft.Extensions.Configuration;
 
 #nullable disable
 
@@ -9,8 +11,10 @@ namespace API_Tickets.Context
 {
     public partial class TicketsContext : DbContext
     {
-        public TicketsContext()
+        public I_DBManager Manager;
+        public TicketsContext(I_DBManager dBManager)
         {
+            Manager = dBManager;
         }
 
         public TicketsContext(DbContextOptions<TicketsContext> options)
@@ -24,7 +28,7 @@ namespace API_Tickets.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer();
+                optionsBuilder.UseSqlServer(Manager.BuildConnectionString());
             }
         }
 
