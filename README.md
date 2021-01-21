@@ -12,17 +12,17 @@ Objeto JSON:
     "Usuario": "UserPrueba"	
 }
 
+-- Eliminar ticket --
 Método: DELETE
 Petición: RutaLocal + /api/Ticket/DeleteTicket
--- Eliminar ticket --
 Objeto JSON:
 {
     "IdTicket": #idticket
 }
 
+-- Editar ticket --
 Método: PUT
 Petición: RutaLocal + /api/Ticket/EditTicket
--- Editar ticket --
 Objeto JSON:
 {
     "Usuario": "UserPrueba2",
@@ -30,9 +30,9 @@ Objeto JSON:
     "IdTicket": #idticket
 }
 
+-- Recuperar tickets --
 Método: GET
 Petición: RutaLocal + /api/Ticket/RetrieveTicket
--- Recuperar tickets --
 Objeto JSON:
 * Todos:
 {
