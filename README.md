@@ -4,19 +4,25 @@
 2. La API la desarrolle sobre Net Core 3.0, en el appsettings.json se configura el ambiente de la base de datos donde deseean probar la API en la llave EntornoDev.
 3. Las pruebas que realicé para su correcto funcionamiento las realice utilizando Postman, a continuación describo los Http Methods utilizados para sus peticiones, además cada petición la realizo con un Body de forma raw en formato JSON. De esta forma lo importante es siempre enviar un objeto JSON hacia la API por cada petición.
 
--- Crear ticket (POST) --
+-- Crear ticket --
+Método: POST
+Petición: RutaLocal + /api/Ticket/CreateTicket
 Objeto JSON:
 {
     "Usuario": "UserPrueba"	
 }
 
--- Eliminar ticket (DELETE) --
+Método: DELETE
+Petición: RutaLocal + /api/Ticket/DeleteTicket
+-- Eliminar ticket --
 Objeto JSON:
 {
     "IdTicket": #idticket
 }
 
--- Editar ticket (PUT) --
+Método: PUT
+Petición: RutaLocal + /api/Ticket/EditTicket
+-- Editar ticket --
 Objeto JSON:
 {
     "Usuario": "UserPrueba2",
@@ -24,7 +30,9 @@ Objeto JSON:
     "IdTicket": #idticket
 }
 
--- Recuperar tickets (GET) --
+Método: GET
+Petición: RutaLocal + /api/Ticket/RetrieveTicket
+-- Recuperar tickets --
 Objeto JSON:
 * Todos:
 {
